@@ -42,7 +42,7 @@
     padding: 30px 50px 20px;
     .flex-display;
     .justify-content(flex-start);
-    .flex-wrap(wrap);
+    .flex-wrap(nowrap);
     .align-items(center);
     .align-content(space-between);
     margin-bottom: 20px;
@@ -73,14 +73,6 @@
     -webkit-align-self: auto;
     -ms-flex-item-align: auto;
     align-self: auto;
-    @media only screen and (max-width : 1024px) {
-        margin-bottom: 0;
-        &.flex-nav {
-            -webkit-align-self: flex-start;
-            -ms-flex-item-align: start;
-            align-self: flex-start;
-        }
-    }
 }
 // profile widgets
 .flex-profile1,
