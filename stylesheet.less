@@ -1,0 +1,739 @@
+// -----------------------------
+// Template Imports
+// -----------------------------
+
+@import "@{templateCommon}/bk-less-framework-v8.less"; // BaseKit LESS Framework
+
+// @import "@{templateLocal}/bk-v8-test.less";
+
+@import "@{templateLocal}/less/widget-gallery.less";    // Gallery Widget
+@import "@{templateLocal}/less/widget-slideshow.less";  // Slideshow Widget
+
+@import "@{templateLocal}/less/forms-and-buttons.less"; // Forms and Buttons
+
+@import "@{templateLocal}/less/header-style.less";
+
+@import "@{templateLocal}/less/plugin-blog.less";       // Plugins
+@import "@{templateLocal}/less/plugin-menu.less";
+@import "@{templateLocal}/less/plugin-ecommerce.less";
+
+@import "@{templateLocal}/less/mixins.less";
+
+
+
+
+// -----------------------------
+// Typography
+// -----------------------------
+
+.company-link {
+    color: @color__companyname--text;
+    font-family: @font__companyname--font-family;
+    font-size: @font__companyname--font-size;
+    font-weight: @font__companyname--font-weight;
+    line-height: @font__companyname--line-height;
+    letter-spacing: @font__companyname--letter-spacing;
+    @media only screen and (max-width : 600px) {
+        font-size: bkscale(@font__companyname--font-size,0.8);
+        line-height: bkscale(@font__companyname--line-height,0.8);
+    }
+}
+
+a {
+    color: @color__link--text;
+    .transition( all, 0.5s, ease );
+}
+
+.profile a {
+    color: @color-swatch6;
+}
+
+h1 {
+    color: @color__h1--text;
+    font-family: @font__h1--font-family;
+    font-size: @font__h1--font-size;
+    font-weight: @font__h1--font-weight;
+    line-height: @font__h1--line-height;
+    letter-spacing: @font__h1--letter-spacing;
+}
+
+h2 {
+    color: @color__h2--text;
+    font-family: @font__h2--font-family;
+    font-size: @font__h2--font-size;
+    font-weight: @font__h2--font-weight;
+    line-height: @font__h2--line-height;
+    letter-spacing: @font__h2--letter-spacing;
+}
+
+h3 {
+    color: @color__h3--text;
+    font-family: @font__h3--font-family;
+    font-size: @font__h3--font-size;
+    font-weight: @font__h3--font-weight;
+    line-height: @font__h3--line-height;
+    letter-spacing: @font__h3--letter-spacing;
+}
+
+h4 {
+    color: @color__h4--text;
+    font-family: @font__h4--font-family;
+    font-size: @font__h4--font-size;
+    font-weight: @font__h4--font-weight;
+    line-height: @font__h4--line-height;
+    letter-spacing: @font__h4--letter-spacing;
+}
+
+p {
+    color: @color__p--text;
+    font-family: @font__p--font-family;
+    font-size: @font__p--font-size;
+    font-weight: @font__p--font-weight;
+    line-height: @font__p--line-height;
+    letter-spacing: @font__p--letter-spacing;
+}
+
+
+
+
+// -----------------------------
+// Homepage container
+// -----------------------------
+
+.bk-pt-home .container {
+    margin-top: 3em;
+    @media @tablet {
+        margin-top: 2.5em;
+    }
+}
+
+
+
+
+// -----------------------------
+// Widgets
+// -----------------------------
+
+.container .widget {
+    width: 90%;
+    margin-right: 5%;
+    margin-left: 5%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    @media only screen and (min-width: 1140px) {
+        width: 960px; // 1140px - 10% for margins
+        margin: 10px auto;
+    }
+}
+
+// Widgets in Responsive Columns
+.container {
+    // Two Columns
+    .columns-two-left,
+    .columns-two-right,
+    // Three Columns
+    .columns-three-left,
+    .columns-three-middle,
+    .columns-three-right,
+    // Four Columns
+    .columns-four-first,
+    .columns-four-second,
+    .columns-four-third,
+    .columns-four-fourth {
+        .widget {
+            width: auto;
+            margin: 10px 0;
+            @media only screen and (min-width: 1140px) {
+                width: auto;
+                margin: 10px auto;
+            }
+        }
+    }
+}
+
+
+
+
+// -----------------------------
+// Tag link
+// -----------------------------
+
+.tag-link:after {
+    content: "\002C";
+}
+
+.tag-item:last-child .tag-link:after {
+    content: "";
+}
+
+
+
+
+// -----------------------------
+// Content Widget
+// -----------------------------
+
+@media @mobile {
+    h1 {
+        font-size: bkscale(@font__h1--font-size,0.8);
+        line-height: bkscale(@font__h1--line-height,0.8);
+    }
+    h2 {
+        font-size: bkscale(@font__h2--font-size,0.8);
+        line-height: bkscale(@font__h2--line-height,0.8);
+    }
+    h3 {
+        font-size: bkscale(@font__h3--font-size,0.9);
+        line-height: bkscale(@font__h3--line-height,0.9);
+    }
+    h4 {
+        font-size: bkscale(@font__h4--font-size,0.9);
+        line-height: bkscale(@font__h4--line-height,0.9);
+    }
+    p {
+        font-size: bkscale(@font__p--font-size,0.9);
+        line-height: bkscale(@font__p--line-height,0.9);
+    }
+}
+
+
+
+
+// -----------------------------
+// Blockquote
+// -----------------------------
+
+.content blockquote {
+    position: relative;
+    quotes: "“" "”" "“" "”";
+    margin-right: 5%;
+    padding-left: 35px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    font-family: @font__h3--font-family;
+    color: @color-swatch4;
+    @media @mobile {
+        margin-right: 0;
+    }
+    &:before {
+        position: absolute;
+        left: 0;
+        top: -5px;
+        font-size: 60px;
+        line-height: 50px;
+        padding: 0;
+        width: 28px;
+        height: 32px;
+        text-align: center;
+        vertical-align: middle;
+        color: @color-swatch4;
+    }
+    h1, h2, h3, h4, p, a {
+        font-family: @font__h3--font-family;
+        color: @color-swatch4;
+    }
+}
+
+
+
+
+// -----------------------------
+// Twitter Feed
+// -----------------------------
+
+.twitter .tweet-item {
+    p {
+        padding-bottom: 0;
+    }
+    .tweet-wrap {
+        max-width: 80%;
+    }
+    .avatar {
+        max-width: 16%;
+        margin-right: 15px;
+        @media @mobile {
+            margin-bottom: 10px;
+            margin-right: 0;
+        }
+    }
+    .avatar-image {
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+    }
+    .tweet-wrap {
+        max-width: 77%;
+        margin-top: -3px;
+        @media @mobile {
+            padding-left: 0;
+            border: none;
+            margin: 0 auto;
+        }
+    }
+    .avatar,
+    .tweet-wrap {
+        display: inline-block;
+        vertical-align: top;
+        @media @mobile {
+            max-width: 100%;
+            width: 100%;
+        }
+    }
+    .account-link {
+        font-family: @font__h3--font-family;
+        color: @color__primary;
+        font-size: @font__p--font-size;
+        font-weight: @font__p--font-weight;
+        line-height: @font__p--line-height;
+    }
+    .tweet-metadata {
+        font-size: 90%;
+        .timestamp,
+        .via {
+            color: lighten(@color-swatch5, 15%)
+        }
+    }
+    .timestamp {
+        margin-right: 5px;
+    }
+}
+
+// Three Columns on Tablet
+.columns-three-left,
+.columns-three-middle,
+.columns-three-right {
+    .twitter .tweet-item {
+        .avatar {
+            margin-bottom: 10px;
+            margin-right: 0;
+        }
+        .tweet-wrap {
+            padding-left: 0;
+            border: none;
+            margin: 0 auto;
+        }
+        .avatar,
+        .tweet-wrap {
+            max-width: 100%;
+            width: 100%;
+        }
+    }
+}
+
+// Four Columns
+.columns-four-first,
+.columns-four-second,
+.columns-four-third,
+.columns-four-fourth {
+    .twitter .tweet-item {
+        .avatar {
+            margin-bottom: 10px;
+            margin-right: 0;
+        }
+        .tweet-wrap {
+            padding-left: 0;
+            border: none;
+            margin: 0 auto;
+        }
+        .avatar,
+        .tweet-wrap {
+            max-width: 100%;
+            width: 100%;
+        }
+    }
+}
+
+
+
+
+// -----------------------------
+// Profile Widget: Twitter
+// -----------------------------
+
+.profile .twitter .tweet-item {
+    text-align: center;
+    .avatar {
+        margin-bottom: 10px;
+        margin-right: 0;
+    }
+    .avatar-link {
+        display: block;
+        max-width: 48px;
+        margin: 0 auto;
+    }
+    .avatar-image {
+        margin: 0 auto;
+    }
+    .tweet-wrap {
+        padding-left: 0;
+        border: none;
+        margin: 0 auto;
+    }
+    .avatar,
+    .tweet-wrap {
+        max-width: 100%;
+        width: 100%;
+    }
+    .tweet-content a,
+    .account-link {
+        color: @color-swatch3;
+    }
+    .tweet-metadata {
+        .timestamp,
+        .via {
+            color: @color-swatch6;;
+        }
+    }
+}
+
+
+
+
+// -----------------------------
+// Map Widget
+// -----------------------------
+
+.map {
+    border: 1px solid darken(@color__body--background, 8%);
+}
+
+
+
+
+
+// -----------------------------
+// Click to Call Widget
+// -----------------------------
+
+.clicktocall {
+    a:hover {
+        text-decoration: none;
+        cursor: text;
+    }
+    @media @mobile {
+        .phone-number-link {
+            width: 100%;
+            padding: 8px 20px;
+            text-align: center;
+        }
+        a:hover {
+            cursor: pointer;
+        }
+        .label {
+            color: @color__button--text;
+        }
+    }
+}
+
+
+
+
+// -----------------------------
+// Dropbox Label
+// -----------------------------
+
+.dropbox .label {
+    margin-left: 10px;
+}
+
+
+
+
+// -----------------------------
+// Image Widget
+// -----------------------------
+
+.imagewidget {
+    .image-link {
+        width: 100%;
+        text-align: center;
+    }
+    margin-bottom: 100px;
+    .image-title {
+        font-family:@font__feature-headline--font-family;
+        font-size:20px;
+        font-weight: 400;
+        line-height:30px;
+        color: @color-swatch4;
+        letter-spacing: inherit;
+    }
+    .image-description {
+        font-family:@font__feature-strapline--font-family;
+        font-size:16px;
+        font-weight: 400;
+        line-height:26px;
+        color: @color-swatch5;
+        letter-spacing: inherit;
+    }
+}
+
+.imagewidget .caption {
+    position: absolute;
+    width: 94.5%;
+    padding: 15px 20px;
+    margin: -20px 2% 20px;
+    background-color: lighten(@color__body--background, 50%);
+    border: 1px solid darken(@color__body--background, 2%);
+}
+
+
+// -----------------------------
+// Divider (Keyline)
+// -----------------------------
+
+hr.rule {
+    height: 1px;
+    background-color: darken(@color__body--background, 8%);
+}
+
+
+// Horizontal rule in blog posts
+hr {
+    height: 3px;
+    border: 0;
+    margin-bottom: 18px;
+    background-color: darken(@color-swatch7, 5%);
+}
+
+
+
+
+// -----------------------------
+// Footer
+// -----------------------------
+
+.bk-pt-default {
+    .template-footer {
+        .flex-profile1,
+        .flex-profile2 {
+            -webkit-flex: 0 1 20%;
+            -ms-flex: 0 1 20%;
+            flex: 0 1 20%;
+        }
+        .hero-logo {
+            -webkit-flex: 0 1 50%;
+            -ms-flex: 0 1 50%;
+            flex: 0 1 50%;
+        }
+        .flex-profile1,
+        .flex-profile2,
+        .hero-logo {
+            @media @tablet {
+                -webkit-flex: 1 1 100%;
+                -ms-flex: 1 1 100%;
+                flex: 1 1 100%;
+                text-align: center;
+                padding-bottom: 10px;
+            }
+        }
+    }
+}
+
+.bk-pt-home {
+    .template-footer {
+        .flex-profile1,
+        .flex-profile2 {
+            -webkit-flex: 0 1 50%;
+            -ms-flex: 0 1 50%;
+            flex: 0 1 50%;
+            @media @tablet {
+                -webkit-flex: 1 1 100%;
+                -ms-flex: 1 1 100%;
+                flex: 1 1 100%;
+                text-align: center;
+            }
+        }
+        .hero-logo {
+            display: none;
+        }
+    }
+}
+
+.template-footer {
+    .flex-container {
+        padding: 30px 50px 20px;
+        margin-top: 50px;
+        margin-bottom: 0;
+        background-color: @color-swatch7;
+        @media only screen and (max-width: 1024px) {
+            padding: 30px 5%;
+            margin-bottom: 0;
+        }
+        // flex box classes are the same as in header - header-style.less
+        .justify-content(space-between);
+    }
+    .flex-profile1,
+    .flex-profile2,
+    .hero-logo {
+        @media @tablet {
+            margin-bottom: 10px;
+            text-align: center;
+            -webkit-flex: 1 1 100%;
+            -ms-flex: 1 1 100%;
+            flex: 1 1 100%;
+        }
+    }
+    .address .address-line {
+        display: inline-block;
+
+        &:after {
+            display: inline-block;
+            content: ",";
+        }
+
+        &:last-child:after {
+            display: none;
+        }
+    }
+}
+
+
+// -----------------------------
+// Profile Widget
+// -----------------------------
+
+.profile {
+    h1, h2, h3, h4, p, a, .social-link:before {
+        color: @color-swatch6;
+        padding-bottom: 0;
+    }
+}
+
+// phone number in header
+.hero-header {
+    text-align: right;
+    .phone-number-link {
+        height: 40px;
+    }
+    .profile .phone-number {
+        width: 0;
+        visibility:hidden;
+        opacity:0;
+        font-size: 0;
+    }
+    .profile .phone-number-link.icon--phone {
+        padding: 10px 0 10px 40px;
+    }
+    .profile .companyphone .icon:before {
+        margin-right: 0!important;
+    }
+    .profile .phone-number-link:hover {
+        text-decoration: none;
+    }
+    .profile .phone-number-link:hover .phone-number {
+        width: auto;
+        visibility: visible;
+        opacity: 1;
+        font-size: 16px;
+        letter-spacing: 3px;
+        color: @color__navigation--text--hover;
+        .transition( all, 0.5s, ease );
+        @media only screen and (max-width : 600px) {
+            display: none;
+            letter-spacing: 0;
+            opacity: 0.5;
+        }
+    }
+}
+
+
+// email in header
+.hero-header {
+    .profile .emailaddress a {
+        display: block;
+        padding-left: 30px;
+        background-size: 18px;
+        width: 32px;
+        min-height: 16px;
+        background-repeat: no-repeat;
+        background-position: center left;
+        background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QAAKqNIzIAAAAJcEhZcwAADdcAAA3XAUIom3gAAAAHdElNRQfgBB0OHQkBTWESAAAAsElEQVQoz6WRIQ7CQBBF/5YVKHqFcoYqbkAwhHAFwgEqOAeOBAyuJ0AAFouhnkrWQgiK5CFokxZoCWHGzMz7meTPGFQf3hcuq6lGulbQppbiQsoQfciQIzfhCEiYvOE+KR2ccAifDQtsAUcktFEuEJY5W3yEaDBjk9Uud3HXWGvtFKillYx6Omck2/DMASkHosLElQUipFvqnX1xvv/5kp5MjciTsYp1UtXHjGLz9zcf7M+F4JnYjP4AAAAldEVYdGRhdGU6Y3JlYXRlADIwMTYtMDQtMjlUMTQ6Mjk6MDkrMDI6MDAu+QIHAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDE2LTA0LTI5VDE0OjI5OjA5KzAyOjAwX6S6uwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAAASUVORK5CYII=');
+
+        font-size: 0;
+        white-space: nowrap;
+        text-decoration: none;
+    }
+    .profile .emailaddress a:hover {
+        padding-left: 30px;
+        text-indent: 0;
+        width: auto;
+        font-size: 18px;
+        .transition( all, 0.5s, ease );
+        @media only screen and (max-width : 600px) {
+            width: 0;
+            font-size:0;
+            opacity: 0.8;
+        }
+    }
+}
+
+.template-footer .profile {
+    .address p {
+        padding-bottom: 0;
+    }
+    .headline,
+    .strapline,
+    .description {
+        @media @mobile {
+            font-size: @font__p--font-size;
+            font-weight: @font__p--font-weight;
+            line-height: @font__p--line-height;
+        }
+    }
+}
+
+
+
+
+// -----------------------------
+// Yelp
+// -----------------------------
+
+
+.yelpreview ul {
+    list-style: none;
+    margin: 16px 0;
+}
+
+
+
+
+// -------------------
+// Social Icons Widget
+// -------------------
+
+
+.social-item {
+    margin-right: 0;
+}
+
+.social-link {
+    padding: 5px;
+    color: @color__socialicons--icon;
+}
+
+// Social icons colour
+.social-link:before {
+    color: @color__socialicons--icon;
+    margin-right: 10px;
+}
+
+// Social icons transition text
+.social-name {
+    width: 0;
+    visibility:hidden;
+    opacity:0;
+    font-size: 0;
+    .transition( all, 0.5s, ease );
+}
+
+.social-link:hover {
+    text-decoration: none;
+    .social-name {
+        width: auto;
+        visibility: visible;
+        opacity: 1;
+        font-size: 16px;
+        .transition( all, 0.5s, ease );
+    }
+}

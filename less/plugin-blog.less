@@ -1,0 +1,265 @@
+// ----------------------------------------------
+// Plugin: Blog
+// ----------------------------------------------
+
+
+// -----------
+// Search Form
+// -----------
+
+
+// Styles are set in 'less > forms-and-buttons.less'
+
+
+// ----------
+// Posts List
+// ----------
+
+.blogpostlist .title-link {
+    color: @color__blogpostlist-title--text;
+    &:hover {
+        color: @color-swatch3;
+        text-decoration: none;
+    }
+}
+
+// Read More Button
+
+.read-more {
+    display: inline-block;
+    margin: 1em 0;
+    padding: 9px 18px;
+    color: @color__button--text;
+    background-color: @color__button--background;
+    border: 2px solid @color__button--border;
+    &:hover {
+        color: lighten(@color__button--text, 10%);
+        background-color: @color__button--background--hover;
+        border: 2px solid darken(@color__button--border, 10%);
+        text-decoration: none;
+        .transition( all, 0.5s, ease );
+    }
+}
+
+// Return to Blog Link
+
+.blog-home-link {
+    display: inline-block;
+    width: 100%;
+    margin: 30px 0 40px;
+    text-align: center;
+}
+
+// Older & Newer buttons
+
+.blogpostlist .post-list-footer {
+    .pagination-list {
+        display: inline-block;
+        width: 100%;
+    }
+    .button {
+        padding: 4px 12px;
+        background-color: @color__button--background--hover;
+        &:hover {
+            background-color: @color__button--background;
+
+        }
+    }
+}
+
+
+// ------------------------
+// Posts list & Single Post
+// ------------------------
+
+.post-article {
+    width: 100%;
+}
+
+// Images
+
+.post-image {
+    display: inline-block;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 40px;
+    text-align: center;
+    .image {
+        margin: 0 auto;
+        max-height: 450px;
+        @media @tablet {
+            max-height: 350px;
+        }
+    }
+    @media @tablet {
+        margin-bottom: 20px;
+    }
+}
+
+.blogpostlist__image {
+    margin: 0 auto;
+}
+
+.post-content,
+.post-footer {
+    width: auto;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+// Post Footer
+.post-footer {
+    padding: 10px 0 40px;
+    border-bottom: 1px solid darken(@color__body--background, 8%);
+}
+
+.post-article:last-child .post-footer {
+    border-bottom: none;
+}
+
+.blogpost .post-footer {
+    border-bottom: none;
+}
+
+
+
+// -----------
+// Single Post
+// -----------
+
+
+// Post Title
+
+.blogpost__post-title {
+    padding: 10px 0 30px;
+    color: @color__blogpost-title--text;
+}
+
+// Date
+
+time.timestamp.blogpost__timestamp {
+    display: inline-block;
+    margin: 2em 0 0;
+    width: 100%;
+}
+
+// Categories and Tags
+
+.post-attributes {
+    display: inline-block;
+    width: 100%;
+    margin: 2em 0;
+    background-color: transparent;
+    .category-title,
+    .tags-title {
+        display: inline-block;
+    }
+}
+
+.tag-link:after {
+    content: "\002C";
+}
+
+.tag-item:last-child .tag-link:after {
+    content: "";
+}
+
+.timestamp,
+.post-attributes .category-title,
+.post-attributes .category-link,
+.post-attributes .tags-title,
+.post-attributes .tag-link,
+.tag-link:after {
+    opacity: 0.9;
+    font-size: bkscale(@font__p--font-size,0.8);
+    line-height: bkscale(@font__p--line-height,0.8);
+}
+
+
+// Sharing buttons
+
+.sharing-links {
+
+    // Mobile
+    .network-item,
+    .button {
+        width: 100%;
+    }
+    .button {
+        padding: 9px 5px;
+        margin-bottom: 20px;
+        font-size: bkscale(@font__p--font-size,0.8);
+        line-height: bkscale(@font__p--line-height,0.8);
+        color: @color__p--text;
+        border: 2px solid darken(@color__body--background, 10%);
+        text-transform: inherit;
+        opacity: 0.9;
+    }
+    // Buttons on hover
+    .button:hover {
+        &.icon--twitter {
+            color: #4099FF;
+        }
+        &.icon--facebook {
+            color: #3b5998;
+        }
+        &.icon--googleplus {
+            color: #d34836;
+        }
+    }
+
+    // Tablet and Desktop
+    @media only screen and (min-width:550px) {
+        .flex-display;
+        .justify-content(flex-start);
+        .flex-wrap(nowrap);
+        .align-items(center);
+        .align-content(stretch);
+
+        .network-item {
+            width: auto;
+        }
+
+        .button {
+            display: block;
+            padding: 7px 11px;
+            width: auto;
+            min-height: 16px;
+            background-size: 18px;
+
+            font-size: 0;
+            white-space: nowrap;
+            text-decoration: none;
+            opacity: 0.8;
+            &.icon:before {
+                display: none;
+            }
+            &.icon--twitter {
+                background-image:image('/images/sharing-links-twitter.png');
+                background-repeat: no-repeat;
+                background-position: 10px center;
+            }
+            &.icon--facebook {
+                background-image:image('/images/sharing-links-facebook.png');
+                background-repeat: no-repeat;
+                background-position: 10px center;
+            }
+            &.icon--googleplus {
+                background-image:image('/images/sharing-links-googleplus.png');
+                background-repeat: no-repeat;
+                background-position: 10px center;
+            }
+        }
+        .button:hover {
+            font-size: bkscale(@font__p--font-size,0.8);
+            line-height: bkscale(@font__p--line-height,0.8);
+            width: auto;
+            padding-left: 35px;
+            letter-spacing: 0;
+            .transition( all, 0.5s, ease );
+            opacity: 0.9;
+        }
+    }
+
+}

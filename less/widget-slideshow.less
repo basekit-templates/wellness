@@ -1,0 +1,287 @@
+// ----------------------------------------------
+// Slideshow Widget
+// ----------------------------------------------
+
+// Slideshow Height
+.slides-list {
+    min-height: 100px;
+    max-height: 700px;
+    overflow: hidden;
+    margin: 0 20px;
+    @media @tablet {
+        max-height: 300px;
+    }
+    @media @mobile {
+        max-height: 200px;
+    }
+}
+.slides-list,
+.responsiveslideshow .figure {
+    position: relative;
+    min-height: 400px;
+    @media @tablet {
+        min-height: 300px;
+    }
+    @media @mobile {
+        min-height: 200px;
+    }
+}
+
+// Slideshow Images
+// ----------------
+
+// Use Background-image Method
+.responsiveslideshow .figure {
+    background-size: cover;
+    background-position: center;
+}
+// Hide Img Element
+.responsiveslideshow .image { display: none; }
+
+
+// Prevents two slides from displaying at the same time
+// ----------------------------------------------------
+// because of slow JS state changes
+.slide-item.current + .slide-item {
+    display: none;
+}
+
+.responsiveslideshow__image {
+    display: none;
+}
+
+// Figure
+// ------
+
+.responsiveslideshow__figure {
+    background-size: cover;
+    background-position: center;
+}
+
+// Slide Navigation
+// ----------------
+
+.slide-navigation {
+    display: block;
+    position: absolute;
+    top: 41%;
+    left: 0;
+    right: 0;
+    min-height: 40px;
+    margin: 0;
+    @media @mobile {
+        top: 35%;
+    }
+
+    // Button
+    .button {
+        position: absolute;
+        top: 0;
+        padding: 0;
+        text-align: center;
+        background-color: fade(@color__body--background, 20%);
+        box-shadow: none;
+        width: 40px;
+        height: 40px;
+        min-height: initial;
+        line-height: 30px;
+        font-size: 30px;
+        border: 2px solid fade(@color-swatch4, 50%);
+        &:hover {
+            border: 2px solid fade(@color-swatch4,40%);
+        }
+    }
+
+    // Control Text
+    .control-text {
+        display: none;
+    }
+}
+
+// Previous Button
+// ---------------
+
+.responsiveslideshow__previous-button:before,
+.responsiveslideshow__next-button:after {
+    @media @mobile {
+        font-size: 26px!important;
+    }
+}
+.responsiveslideshow__previous-button {
+    left: 0;
+
+    // Icon
+    &:before {
+        content: '\f104';
+        display: block;
+        margin: 0;
+        color: fade(@color-swatch4,50%);
+    }
+}
+
+// Next Button
+// -----------
+.responsiveslideshow__next-button {
+    right: 0;
+
+    // Icon
+    &:after {
+        content: '\f105';
+        display: block;
+        margin: 0;
+        padding-left: 0.1em;
+        color: fade(@color-swatch4,50%);
+    }
+}
+
+// Pause Toggle
+// ------------
+.responsiveslideshow__pause-toggle {
+    top: 0;
+    bottom: 0;
+    left: 70px;
+    margin: auto;
+    @media @mobile {
+        display: none;
+    }
+    // Icon
+    &:before {
+        display: block;
+        margin: 0;
+        font-size: 14px;
+        color: fade(@color-swatch4,50%);
+    }
+    // Play Icon
+    &.pause:before {
+        content: '\f04b';
+        color: fade(@color-swatch4,50%);
+    }
+}
+
+// Caption
+// -------
+
+.responsiveslideshow .caption {
+    .flex-display;
+    .flex-direction(column);
+    .justify-content(center);
+
+    height: 100%;
+    margin: 0;
+    padding: 30px;
+    background-color: fade(@color__slideshow-caption--background, 50%);
+    text-align: center;
+
+    @media @tablet {
+        padding: 10px 25px 15px;
+    }
+
+    @media @mobile {
+        left: 0;
+        bottom: 0;
+        right: 0;
+        padding: 5px 25px 5px;
+    }
+
+    .image-title {
+        font-family: @font__h3--font-family;
+        font-size: @font__h3--font-size;
+        line-height: @font__h3--line-height;
+        color: lighten(@color__body--background, 50%);
+        @media @mobile {
+            font-size: @font__h4--font-size;
+            line-height: @font__h4--line-height;
+        }
+    }
+
+    .image-description {
+        font-family: @font__p--font-family;
+        font-size: @font__p--font-size;
+        line-height: @font__p--line-height;
+        color: lighten(@color__body--background, 50%);
+    }
+}
+
+// Slideshow Pagination
+// --------------------
+
+// Pagination Item
+
+.responsiveslideshow .responsiveslideshow__pagination-item {
+
+    // Button
+    .button {
+        background-color: fade(@color-swatch4, 50%);
+        border: none;
+        min-height: initial;
+        text-indent: -1000px;
+        overflow: hidden;
+    }
+
+    // Selected Button
+    &.selected .button {
+        opacity: 1;
+        background-color: @color-swatch3;
+        min-height: inherit;
+    }
+}
+
+.slide-pagination {
+    position: relative;
+}
+
+.slide-pagination .pagination-list {
+    display: inline-block;
+    width: 100%;
+    margin-top: 7px;
+    text-align: center;
+    .pagination-item {
+        margin: 0 2px;
+        display: inline-block;
+    }
+    .button {
+        width: 8px;
+        height: 8px;
+        padding: 0;
+        text-indent: -9999px;
+        overflow: hidden;
+        box-shadow: none;
+        -webkit-border-radius: 50px;
+           -moz-border-radius: 50px;
+                border-radius: 50px;
+        background-color: darken(@color__body--background, 20%);
+    }
+    .pagination-item.selected .button {
+        background-color: @color-swatch3;
+    }
+}
+
+// Responsivecolumns
+// -----------------
+
+.responsivecolumns {
+    .slides-list {
+        max-height: 250px;
+    }
+    .slides-list,
+    .responsiveslideshow .figure {
+        min-height: 250px;
+    }
+    .slide-navigation {
+        @media @mobile {
+            top: 35%;
+        }
+    }
+    .responsiveslideshow__previous-button:before,
+    .responsiveslideshow__next-button:after {
+            font-size: 26px!important;
+    }
+    .responsiveslideshow .caption {
+        padding: 10px 25px 15px;
+    }
+    .caption .image-title,
+    .caption .image-description {
+        font-size: bkscale(@font__p--font-size,0.8);
+        line-height: bkscale(@font__p--line-height,0.8);
+    }
+}

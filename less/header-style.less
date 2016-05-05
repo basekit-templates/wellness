@@ -1,0 +1,699 @@
+// ---------------
+// Flexbox
+// ---------------
+
+.hero {
+    .flex-display;
+    .flex-direction(column);
+    .justify-content(flex-start);
+    .flex-wrap(wrap);
+    .align-items(center);
+    .align-content(space-between);
+    width: 100%;
+    background-color: @color-swatch7;
+
+    // Reorder items for mobile
+    @media only screen and (max-width : 600px) {
+        .flex-container {
+            -webkit-box-ordinal-group: 2;
+            -moz-box-ordinal-group: 2;
+            -webkit-order: 1;
+            -ms-flex-order: 1;
+            order: 1;
+        }
+        .hero-logo {
+            -webkit-box-ordinal-group: 3;
+            -moz-box-ordinal-group: 3;
+            -webkit-order: 2;
+            -ms-flex-order: 2;
+            order: 2;
+        }
+        .widget[data-widget-type="feature"] {
+            -webkit-box-ordinal-group: 4;
+            -moz-box-ordinal-group: 4;
+            -webkit-order: 3;
+            -ms-flex-order: 3;
+            order: 3;
+        }
+    }
+}
+
+.flex-container { // Nav and profile widgets in top bar and footer
+    padding: 30px 50px 20px;
+    .flex-display;
+    .justify-content(flex-start);
+    .flex-wrap(wrap);
+    .align-items(center);
+    .align-content(space-between);
+    margin-bottom: 20px;
+    @media only screen and (max-width : 1024px) {
+        padding: 0 5%;
+        background-color: fade(@color-swatch6, 10%);
+    }
+}
+
+.hero-header .flex-container {
+    @media only screen and (max-width : 1024px) {
+        .flex-wrap(nowrap);
+    }
+}
+
+// top bar in default page
+.bk-pt-default .flex-container {
+    background-color: @color-swatch7;
+    padding: 15px 50px 10px;
+    margin-bottom: 0;
+    @media only screen and (max-width : 1024px) {
+        padding: 0 5%;
+    }
+}
+
+// Global style for flex items in top bar
+.flex-item {
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto;
+    @media only screen and (max-width : 1024px) {
+        margin-bottom: 0;
+        &.flex-nav {
+            -webkit-align-self: flex-start;
+            -ms-flex-item-align: start;
+            align-self: flex-start;
+        }
+    }
+}
+// profile widgets
+.flex-profile1,
+.flex-profile2 {
+    -webkit-flex: 0 1 250px;
+    -ms-flex: 0 1 250px;
+    flex: 0 1 250px;
+}
+
+// Navigation widget
+.flex-nav {
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+}
+
+// Alignment in profile widgets
+
+.flex-profile1 {
+    text-align: left;
+}
+.flex-profile2 {
+    text-align: right;
+}
+
+
+
+// --------------
+// Brand
+// --------------
+
+.hero {
+    position: relative;
+}
+
+.hero-header {
+    width: 100%;
+}
+
+.hero-logo {
+    width: 100%;
+    text-align: center;
+    @media only screen and (max-width : 600px) {
+        position: relative;
+    }
+}
+
+.bk-pt-default .hero-header .hero-logo {
+    display: none;
+}
+
+.logo-image {
+    max-height: 300px;
+    margin-bottom: 5px;
+}
+
+.company-link:hover {
+    color: @color__secondary;
+    text-decoration: none;
+}
+
+
+
+
+// -----------------------------
+// Feature
+// -----------------------------
+
+.feature {
+    .background-image,
+    .content-wrap {
+        @media only screen and (min-width: 1025px) {
+            height: 100vh;
+        }
+        min-height: 680px;
+        @media only screen and (max-width: 600px) {
+            min-height: 340px;
+        }
+    }
+    .background-image {
+        display: table;
+        width: 100%;
+        background-size: cover;
+        // Overlay
+        &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: @color__feature-content--background;
+            opacity: 0.5;
+        }
+    }
+    .content-wrap {
+        position: relative;
+        width: 100%;
+        vertical-align: bottom;
+        display: table-cell;
+        text-align: center;
+        @media only screen and (min-width: 1025px) {
+            padding: 60vh 0 20px;
+        }
+        padding: 60% 0 20px;
+        @media only screen and (max-width : 600px) {
+            vertical-align: middle;
+            padding: 20px;
+        }
+    }
+    .content-inner-wrap {
+        max-width: 60%;
+        margin: 0 auto;
+        @media only screen and (max-width : 960px) {
+            max-width: 90%;
+        }
+    }
+    .headline {
+        font-family: @font__feature-headline--font-family;
+        color: @color__feature-headline--text;
+        font-size: @font__feature-headline--font-size;
+        font-weight: @font__feature-headline--font-weight;
+        line-height: @font__feature-headline--line-height;
+        letter-spacing: @font__feature-headline--letter-spacing;
+        text-shadow: 0 2px 5px rgba(0,0,0,0.8);
+    }
+    .strapline {
+        font-family: @font__feature-strapline--font-family;
+        color: @color__feature-strapline--text;
+        font-size: @font__feature-strapline--font-size;
+        font-weight: @font__feature-strapline--font-weight;
+        line-height: @font__feature-strapline--line-height;
+        letter-spacing: @font__feature-strapline--letter-spacing;
+        text-shadow: 0 2px 5px rgba(0,0,0,0.8);
+    }
+    .button {
+        width: auto;
+        margin: 10px 0;
+        padding: 0 20px;
+        border: 2px solid @color__feature-button--border;
+        font-size: 14px;
+        line-height: 24px;
+        color: @color__feature-button--text;
+        background-color: @color__feature-button--background;
+    }
+    .button:hover {
+        border: 2px solid fade(@color__feature-button--border, 60%);
+        color: fade(@color__feature-button--text, 60%);
+    }
+}
+
+@media screen and (max-width : 600px) and (orientation:landscape) {
+    .feature .content-wrap {
+        vertical-align: bottom;
+    }
+}
+
+// Feature Image and Text Size on Tablet
+@media only screen and (max-width : 960px) {
+    .feature {
+        .headline {
+            font-size: bkscale(@font__feature-headline--font-size, .8);
+            line-height: bkscale(@font__feature-headline--line-height, .8);
+        }
+        .strapline {
+            font-size: bkscale(@font__feature-strapline--font-size, .9);
+            line-height: bkscale(@font__feature-strapline--line-height, .9);
+        }
+    }
+}
+
+// Feature Image and Text Size on Mobile
+@media @mobile {
+    .feature {
+        .headline {
+            font-size: bkscale(@font__feature-headline--font-size, .6);
+            line-height: bkscale(@font__feature-headline--line-height, .6);
+        }
+        .strapline {
+            font-size: bkscale(@font__feature-strapline--font-size, .8);
+            line-height: bkscale(@font__feature-strapline--line-height, .8);
+        }
+    }
+}
+
+
+
+
+// -------------------
+// Feature Full Height
+// -------------------
+
+.bk-pt-home [data-widget-type="feature"] {
+    width: 100%;
+}
+
+.bk-pt-home [data-widget-type="feature"] + .hero-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin-bottom: 0;
+    border-bottom: none;
+
+    @media only screen and (min-width: 1025px) {
+        height: 60vh;
+    }
+
+    min-height: 80%;
+    @media only screen and (max-width: 600px) {
+        min-height: 200px;
+        position: relative;
+        margin-bottom: 20px;
+    }
+
+    .hero-logo {
+        position: absolute;
+        top: 40%;
+        @media only screen and (max-width : 1024px) {
+            top: 30%;
+            bottom: inherit;
+        }
+        @media only screen and (max-width : 600px) {
+            position: relative;
+        }
+    }
+    .company-link {
+        color: @color__companyname--text;
+        &:hover {
+            color: lighten(@color__navigation--text--hover, 30%);
+        }
+    }
+    .navigation-list--children {
+        background-color: transparent;
+    }
+    .open .navigation-toggle:before {
+        box-shadow: none;
+    }
+}
+
+.bk-tpl-hidden[data-widget-type="feature"] + .hero-header {
+    position: relative;
+    border-bottom: 1px solid darken(@color__body--background, 8%);
+    margin-bottom: 30px;
+    .company-link {
+        color: @color-swatch3;
+    }
+    .extendednavigation__item-name.item-name {
+        color: @color-swatch4;
+    }
+}
+
+[data-widget-type="feature"] .widget-overlay {
+    top: 200px !important;
+    @media @mobile {
+        top: 150px !important;
+    }
+}
+
+
+// ----------
+// Navigation
+// ----------
+
+// Folder, adds arrow icon
+.item-name--parent:after {
+    display: inline-block;
+    vertical-align: middle;
+    content: "";
+    margin-left: 4px;
+    border: 5px solid transparent;
+    border-top-color: @color__navigation--text;
+    @media only screen and (max-width : 1024px) {
+        border-top-color: @color__navigation--text;
+    }
+}
+.item-name--parent:hover:after {
+    border-top-color: @color__navigation--text--hover;
+    @media only screen and (max-width : 1024px) {
+        border-top-color: @color__navigation--text--hover;
+    }
+}
+
+// Clears margin on ul
+.navigation-list {
+    margin: 0;
+    width: auto;
+}
+
+// Sets background colour to navigation and dropdowns
+
+.extendednavigation .navigation-list--children {
+    left: inherit;
+    right: 0;
+    white-space: normal;
+    border: 1px solid @color__body--background;
+    background-color: @color-swatch7;
+    .navigation-item--child {
+        @media only screen and (min-width: 1024px) {
+            border-bottom: 1px solid @color__body--background;
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+    }
+}
+
+.extendednavigation__item-name.item-name {
+    padding: 4px 12px;
+    color: @color__navigation--text;
+    font-size: @font__navigation--font-size;
+    font-weight: @font__navigation--font-weight;
+    line-height: @font__navigation--line-height;
+    letter-spacing: @font__navigation--letter-spacing;
+    &:hover {
+        color: @color__navigation--text--hover;
+        text-decoration: underline;
+    }
+    @media only screen and (min-width: 600px) and (max-width: 1024px) {
+        font-size: 20px;
+        line-height: 35px;
+    }
+    @media only screen and (max-width : 600px) {
+        padding: 8px 0;
+    }
+}
+
+.navigation-item.selected .item-name {
+    color: @color__navigation--text--selected;
+    text-decoration: underline;
+}
+
+
+
+
+// -----------------------------
+// Nav in Tablet & Mobile
+// -----------------------------
+
+.navigation-list {
+    @media only screen and (max-width : 1024px) {
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100vh;
+        width: 100%;
+        .transform(@y:-100%, @x:0);
+
+
+        z-index: 2;
+
+        padding: 150px 100px;
+        background-color: @color-swatch4;
+
+        // Allows scrolling on mobile
+        &.open {
+            overflow: auto;
+        }
+    }
+    @media only screen and (max-width : 600px) {
+        padding: 65px 0 0 0;
+    }
+}
+
+.navigation-list {
+    @media only screen and (min-width: 1024px) {
+        transition-duration: 0.4s;
+    }
+}
+
+
+// Hides navigation until toggled
+.navigation-list {
+    &.open {
+        display: block;
+    }
+}
+
+.navigation-list.open .navigation-item:hover .navigation-list--children {
+    height: auto;
+    padding: 0;
+    position: relative;
+    opacity: 1;
+    background-color: transparent;
+    .transform(@x:0, @y:0);
+    visibility: visible;
+}
+
+// Navigation item
+.navigation-item {
+    @media only screen and (max-width : 1024px) {
+        opacity: 0;
+        .transform(@x:0, @y:5px);
+        .transition( all, 1s, ease );
+        display: inline-block;
+        position: relative;
+        cursor: pointer;
+
+        z-index: 0;
+
+        .navigation-item:hover & {
+            display: block;
+        }
+    }
+}
+
+.navigation-item,
+.navigation-item.folder {
+    @media only screen and (max-width : 1024px) {
+        width: 90%;
+        margin: 0 5%;
+    }
+}
+
+// Navigation item when nav is open
+.open .navigation-list {
+    .transform(@x:0, @y:0);
+
+    .navigation-item {
+        .transform(@x:0, @y:0);
+        display: block;
+        opacity: 1;
+    }
+}
+
+// Hide toggle on desktop
+.navigation-toggle {
+    display: none;
+    padding: 0;
+    border: none;
+    @media only screen and (max-width : 1024px) {
+        .animation;
+        // Displays as icon's middle bar
+        display: inline-block;
+        height: 26px;
+        width: 26px;
+        text-indent: 1000px;
+        overflow: hidden;
+        background-color: transparent;
+        z-index: 99999;
+
+        .transition( all, 0.2s, ease );
+
+        // Top and bottom navigation item bar
+
+        &:before {
+            content: '';
+            position: absolute;
+            width: 26px;
+            height: 3px;
+            top: 5px;
+            left: inherit;
+            right: 0;
+            margin-top: 8px;
+            margin-right: 0;
+            background: @color-swatch6;
+            box-shadow: 0 7px 0 @color-swatch6;
+            .transition( all, 0.2s, ease );
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            width: 26px;
+            height: 3px;
+            top: 19px;
+            left: inherit;
+            right: 0;
+            margin-top: 8px;
+            margin-right: 0;
+            background: @color-swatch6;
+            .transition( all, 0.2s, ease );
+        }
+        &:hover {
+            background-color: transparent;
+            border: none;
+            &:before {
+                background: lighten(@color-swatch4, 40%);
+                box-shadow: 0 7px 0 lighten(@color-swatch4, 40%);
+            }
+            &:after {
+                background: lighten(@color-swatch4, 40%);
+            }
+        }
+
+        // Toggle Button open state
+        // ------------------------------
+
+        .open & {
+            background-color: transparent;
+            z-index: 100000;
+            position: relative;
+
+            &:before {
+                width: 26px;
+                margin-top: 18px;
+                margin-left: 0;
+                background: @color__body--background;
+                box-shadow: none;
+                -webkit-transform: rotate(45deg);
+                -moz-transform: rotate(45deg);
+                -o-transform: rotate(45deg);
+                -ms-transform: rotate(45deg);
+                transform: rotate(45deg);
+                .transition( all, 0.2s, ease );
+            }
+            &:after {
+                content: '';
+                position: absolute;
+                width: 26px;
+                height: 3px;
+                top: 5px;
+                left: 0;
+                right: 0;
+                margin-top: 18px;
+                margin-left: 0;
+                background: @color__body--background;
+                box-shadow: none;
+                -webkit-transform: rotate(-45deg);
+                -moz-transform: rotate(-45deg);
+                -o-transform: rotate(-45deg);
+                -ms-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+                .transition( all, 0.2s, ease );
+            }
+        }
+    }
+}
+
+
+@keyframes bar1 {
+    0% { top: 13px;}
+    50% { top: 23px;  -webkit-transform: rotate(0deg); -moz-transform: rotate(0deg); -o-transform: rotate(0deg); -ms-transform: rotate(0deg); transform: rotate(0deg);  }
+    100% {top: 23px; background: @color-swatch1; -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -o-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg);   }
+}
+
+@-webkit-keyframes bar1 {
+    0% { top: 13px;}
+    50% { top: 23px; -webkit-transform: rotate(0deg); -moz-transform: rotate(0deg); -o-transform: rotate(0deg); -ms-transform: rotate(0deg); transform: rotate(0deg);   }
+    100% {  }
+}
+
+@keyframes bar2 {
+    0% { bottom: 13px;}
+    50% { bottom: 21px;  -webkit-transform: rotate(0deg); -moz-transform: rotate(0deg); -o-transform: rotate(0deg); -ms-transform: rotate(0deg); transform: rotate(0deg);  }
+    100% {}
+}
+
+@-webkit-keyframes bar2 {
+    0% { bottom: 13px;}
+    50% { bottom: 21px;  -webkit-transform: rotate(0deg); -moz-transform: rotate(0deg); -o-transform: rotate(0deg); -ms-transform: rotate(0deg); transform: rotate(0deg);   }
+    100% {}
+}
+
+// Fix Widget Overlay in editor on tablet and mobile
+
+.widget__extendednavigation {
+    + .widget-overlay {
+        @media only screen and (max-width : 1024px) {
+            display: none;
+        }
+    }
+
+    &.open + .widget-overlay {
+        @media only screen and (max-width : 1024px) {
+            position: fixed!important;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            z-index: 10400!important;
+            display: block;
+            max-width: 90%;
+            margin: 13% auto;
+
+            @media @mobile {
+                width: 90%;
+            }
+
+            &:hover {
+                background: rgba(0, 147, 135, 0.2);
+                border: 1px solid rgb(0, 148, 136);
+                box-shadow: rgba(0, 147, 135, 0.2) 0px 0px 0px 3px inset;
+            }
+        }
+    }
+}
+
+
+
+
+// -------------------
+// Page Title
+// -------------------
+
+.pagetitle {
+    padding: 17px 70px 14px;
+    background-color: darken(@color__body--background, 4%);
+    border-bottom: 1px solid darken(@color__body--background, 10%);
+    text-align: center;
+}
+
+// Page Title Text
+.pagetitle-text {
+    padding-bottom: 0;
+    font-size: @font__h4--font-size;
+    line-height: @font__h4--line-height;
+    text-transform: uppercase;
+
+    @media @mobile {
+        font-size: bkscale(@font__h4--font-size, 0.7);
+        line-height: bkscale(@font__h4--line-height, 0.7);
+    }
+}

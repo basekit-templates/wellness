@@ -1,0 +1,28 @@
+<!-- Template Widgets -->
+
+<div class="hero-header">
+
+    <div class="flex-container">
+
+        <div class="flex-item flex-profile1">
+            {{widget('profile', 'email', { 'profileType':'email', 'email':'profile'})|raw}}
+        </div>
+        <div class="flex-item flex-nav">
+            {{widget('extendednavigation', 'navigation', {"align":"center"})|raw}}
+        </div>
+        <div class="flex-item flex-profile2">
+            {{widget('profile', 'phone', { 'profileType':'phone', 'phone':'profile'})|raw}}
+        </div>
+
+    </div>
+
+    <div class="hero-logo">
+        {{widget('logo', 'logo', {"defaultlogo": asset('images/logo.png')})|raw}}
+        {{widget('companyname', 'companyname', {
+            "business": "profile"
+        })|raw}}
+    </div>
+
+</div>
+
+<!-- End Template Widgets -->

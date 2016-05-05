@@ -1,0 +1,51 @@
+// -----------------------------
+// Mixins
+// -----------------------------
+
+// Transition
+// -----------------------------
+.transition (@prop: all, @time: 0.5s, @ease: ease) {
+    -webkit-transition: @prop @time @ease;
+    -moz-transition:    @prop @time @ease;
+    -ms-transition:     @prop @time @ease;
+    -o-transition:      @prop @time @ease;
+    transition:         @prop @time @ease;
+}
+
+
+
+
+// Border Radius
+// -----------------------------
+
+.border-radius (@radius: 3px) {
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    border-radius: @radius;
+}
+
+
+
+
+// Transform
+// -----------------------------
+
+.transform(@x:0, @y:0) {
+  -webkit-transform: translate(@x, @y);
+  -moz-transform: translate(@x, @y);
+  -o-transform: translate(@x, @y);
+  -ms-transform: translate(@x, @y);
+  transform: translate(@x, @y);
+}
+
+
+
+
+// Enabling HW acceleration in WebKit
+// ----------------------------------
+
+.animation {
+  -webkit-transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
+}
