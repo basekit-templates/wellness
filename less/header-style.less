@@ -152,14 +152,14 @@
         opacity:0;
         font-size: 0;
     }
-    .profile .phone-number-link.icon--phone {
-        padding: 10px 0 10px 40px;
-    }
     .profile .companyphone .icon:before {
         margin-right: 0!important;
     }
     .profile .phone-number-link:hover {
         text-decoration: none;
+    }
+    .profile .phone-number-link.icon--phone {
+        white-space: nowrap;
     }
     .profile .phone-number-link:hover .phone-number {
         width: auto;
@@ -173,6 +173,16 @@
             display: none;
             letter-spacing: 0;
             opacity: 0.5;
+        }
+    }
+    .flex-profile1 {
+        .profile .phone-number-link.icon--phone {
+            padding: 10px 40px 10px 0;
+        }
+    }
+    .flex-profile2 {
+        .profile .phone-number-link.icon--phone {
+            padding: 10px 0 10px 40px;
         }
     }
 }
