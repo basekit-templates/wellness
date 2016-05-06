@@ -59,5 +59,65 @@
 
     </script>
 
+
+<!-- jQuery -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="{{ asset('libs/jquery-1.10.2.min.js')}}"><\/script>')</script>
+
+
+<!-- Feature -->
+<script>
+
+if ($(".hero").length) {
+    var featureHeight = $(".hero").height();
+    var featurePosition = $(".hero").position();
+    var featureTriggerValue = featureHeight + featurePosition.top;
+    var window_height = window.innerHeight;
+    var offsetAmount;
+    var textBoxHeight = $(".content-inner-wrap").height();
+
+    function checkFeatureDimensions() {
+        featureHeight = $(".hero").height();
+        featurePosition = $(".hero").position();
+        featureTriggerValue = featureHeight + featurePosition.top;
+        window_height = window.innerHeight;
+    }
+
+    // Feature parralax fade effect
+    var scrollEffect = function (elem) {
+
+        // How high the window is
+
+        if ( window.pageYOffset > (featureTriggerValue - window_height)  ) {
+
+            if(featureTriggerValue > window_height) {
+                offsetAmount = window.pageYOffset - (featureTriggerValue - window_height);
+            }
+            else {
+                offsetAmount = window.pageYOffset;
+            }
+
+            // Apply styles as user scrolls
+            elemInner.setAttribute(
+                "style", "opacity:" + Math.max(0, parseFloat(1-(2/window_height*(offsetAmount))).toFixed(2)) + ";"
+            );
+        }
+    };
+
+    var elem = document.querySelector('.hero');
+    var elemInner = document.querySelector('.hero-logo');
+
+
+    window.onscroll = function(e) {
+        scrollEffect(elem);
+    };
+
+    $( window ).resize(function() {
+      checkFeatureDimensions();
+    });
+}
+
+</script>
+
 </body>
 </html>

@@ -287,10 +287,10 @@
         }
     }
     .content-inner-wrap {
-        max-width: 60%;
+        max-width: 800px;
         margin: 0 auto;
         @media only screen and (max-width : 960px) {
-            max-width: 90%;
+            max-width: 700px;
         }
     }
     .headline {
@@ -310,12 +310,16 @@
         line-height: @font__feature-strapline--line-height;
         letter-spacing: @font__feature-strapline--letter-spacing;
         text-shadow: 0 2px 5px rgba(0,0,0,0.8);
+        opacity: 0.8;
+        @media screen and (max-width : 600px) {
+            opacity: 1;
+        }
     }
     .button {
         width: auto;
         margin: 10px 0;
         padding: 0 20px;
-        border: 2px solid @color__feature-button--border;
+        border: 2px solid fade(@color__feature-button--border, 15%);
         font-size: 14px;
         line-height: 24px;
         color: @color__feature-button--text;
@@ -343,20 +347,6 @@
         .strapline {
             font-size: bkscale(@font__feature-strapline--font-size, .9);
             line-height: bkscale(@font__feature-strapline--line-height, .9);
-        }
-    }
-}
-
-// Feature Image and Text Size on Mobile
-@media @mobile {
-    .feature {
-        .headline {
-            font-size: bkscale(@font__feature-headline--font-size, .6);
-            line-height: bkscale(@font__feature-headline--line-height, .6);
-        }
-        .strapline {
-            font-size: bkscale(@font__feature-strapline--font-size, .8);
-            line-height: bkscale(@font__feature-strapline--line-height, .8);
         }
     }
 }
