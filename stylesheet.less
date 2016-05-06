@@ -183,8 +183,8 @@ p {
         line-height: bkscale(@font__h2--line-height,0.8);
     }
     h3 {
-        font-size: bkscale(@font__h3--font-size,0.9);
-        line-height: bkscale(@font__h3--line-height,0.9);
+        font-size: bkscale(@font__h3--font-size,0.8);
+        line-height: bkscale(@font__h3--line-height,0.8);
     }
     h4 {
         font-size: bkscale(@font__h4--font-size,0.9);
@@ -232,6 +232,118 @@ p {
         font-family: @font__h3--font-family;
         color: @color-swatch4;
     }
+}
+
+
+
+
+// -----------------------------
+// Click to Call Widget
+// -----------------------------
+
+.clicktocall {
+    a:hover {
+        text-decoration: none;
+        cursor: text;
+    }
+    @media @mobile {
+        .phone-number-link {
+            width: 100%;
+            padding: 8px 20px;
+            text-align: center;
+        }
+        a:hover {
+            cursor: pointer;
+        }
+        .label {
+            color: @color__button--text;
+        }
+    }
+}
+
+
+
+
+// -----------------------------
+// Dropbox Label
+// -----------------------------
+
+.dropbox .label {
+    margin-left: 10px;
+}
+
+
+
+
+// -----------------------------
+// Image Widget
+// -----------------------------
+
+.imagewidget {
+    .image-link {
+        width: 100%;
+        text-align: center;
+    }
+    margin-bottom: 100px;
+    .image-title {
+        font-family:@font__feature-headline--font-family;
+        font-size:20px;
+        font-weight: 400;
+        line-height:30px;
+        color: @color-swatch4;
+        letter-spacing: inherit;
+    }
+    .image-description {
+        font-family:@font__feature-strapline--font-family;
+        font-size:16px;
+        font-weight: 400;
+        line-height:26px;
+        color: @color-swatch5;
+        letter-spacing: inherit;
+    }
+}
+
+.imagewidget .caption {
+    position: absolute;
+    width: 94.5%;
+    padding: 15px 20px;
+    margin: -20px 2% 20px;
+    background-color: lighten(@color__body--background, 50%);
+    border: 1px solid darken(@color__body--background, 2%);
+}
+
+
+
+
+// -----------------------------
+// Divider (Keyline)
+// -----------------------------
+
+hr.rule {
+    height: 1px;
+    background-color: darken(@color__body--background, 8%);
+}
+
+
+// Horizontal rule in blog posts
+hr {
+    height: 3px;
+    border: 0;
+    margin-bottom: 18px;
+    background-color: darken(@color-swatch7, 5%);
+}
+
+
+
+
+// -----------------------------
+// Yelp
+// -----------------------------
+
+
+.yelpreview ul {
+    list-style: none;
+    margin: 16px 0;
 }
 
 
@@ -346,10 +458,96 @@ p {
 
 
 
+// -------------------
+// Social Icons Widget
+// -------------------
+
+
+.social-item {
+    margin-right: 0;
+}
+
+.social-link {
+    padding: 5px;
+    color: @color__socialicons--icon;
+}
+
+// Social icons colour
+.social-link:before {
+    color: @color__socialicons--icon;
+    margin-right: 10px;
+}
+
+// Social icons transition text
+.social-name {
+    width: 0;
+    visibility:hidden;
+    opacity:0;
+    font-size: 0;
+    .transition( all, 0.5s, ease );
+}
+
+.social-link:hover {
+    text-decoration: none;
+    .social-name {
+        width: auto;
+        visibility: visible;
+        opacity: 1;
+        font-size: 16px;
+        .transition( all, 0.5s, ease );
+    }
+}
+
+
+
+
 // -----------------------------
-// Profile Widget: Twitter
+// Profile Widget
 // -----------------------------
 
+.profile {
+    h1, h2, h3, h4, p, a, .social-link:before {
+        font-size: bkscale(@font__p--font-size,0.8);
+        line-height: bkscale(@font__p--line-height,0.8);
+        color: @color-swatch6;
+        padding-bottom: 0;
+    }
+    .legend {
+        font-size: bkscale(@font__p--font-size,0.9);
+        line-height: bkscale(@font__p--line-height,0.9);
+        color: @color-swatch6;
+    }
+    input {
+        font-size: bkscale(@font__p--font-size,0.8);
+        line-height: bkscale(@font__p--line-height,0.8);
+        color: @color-swatch6;
+    }
+    .address .address-line {
+        display: inline-block;
+        &:after {
+            display: inline-block;
+            content: ",";
+        }
+        &:last-child:after {
+            display: none;
+        }
+    }
+    .address p {
+        padding-bottom: 0;
+    }
+}
+
+// Profile Widget: Signup Form Fail Message
+.hero-header,
+.template-footer {
+    .overlay.fail .message-box .message-text {
+        font-size: bkscale(@font__p--font-size,0.8);
+        line-height: bkscale(@font__p--line-height,0.8);
+        color: @color-swatch6;
+    }
+}
+
+// Profile Widget: Twitter
 .profile .twitter .tweet-item {
     .avatar {
         display: none;
@@ -373,113 +571,9 @@ p {
     }
 }
 
-
-
-
-// -----------------------------
-// Map Widget
-// -----------------------------
-
+// Profile Widget: Map Widget
 .map {
     border: 1px solid darken(@color__body--background, 8%);
-}
-
-
-
-
-
-// -----------------------------
-// Click to Call Widget
-// -----------------------------
-
-.clicktocall {
-    a:hover {
-        text-decoration: none;
-        cursor: text;
-    }
-    @media @mobile {
-        .phone-number-link {
-            width: 100%;
-            padding: 8px 20px;
-            text-align: center;
-        }
-        a:hover {
-            cursor: pointer;
-        }
-        .label {
-            color: @color__button--text;
-        }
-    }
-}
-
-
-
-
-// -----------------------------
-// Dropbox Label
-// -----------------------------
-
-.dropbox .label {
-    margin-left: 10px;
-}
-
-
-
-
-// -----------------------------
-// Image Widget
-// -----------------------------
-
-.imagewidget {
-    .image-link {
-        width: 100%;
-        text-align: center;
-    }
-    margin-bottom: 100px;
-    .image-title {
-        font-family:@font__feature-headline--font-family;
-        font-size:20px;
-        font-weight: 400;
-        line-height:30px;
-        color: @color-swatch4;
-        letter-spacing: inherit;
-    }
-    .image-description {
-        font-family:@font__feature-strapline--font-family;
-        font-size:16px;
-        font-weight: 400;
-        line-height:26px;
-        color: @color-swatch5;
-        letter-spacing: inherit;
-    }
-}
-
-.imagewidget .caption {
-    position: absolute;
-    width: 94.5%;
-    padding: 15px 20px;
-    margin: -20px 2% 20px;
-    background-color: lighten(@color__body--background, 50%);
-    border: 1px solid darken(@color__body--background, 2%);
-}
-
-
-// -----------------------------
-// Divider (Keyline)
-// -----------------------------
-
-hr.rule {
-    height: 1px;
-    background-color: darken(@color__body--background, 8%);
-}
-
-
-// Horizontal rule in blog posts
-hr {
-    height: 3px;
-    border: 0;
-    margin-bottom: 18px;
-    background-color: darken(@color-swatch7, 5%);
 }
 
 
@@ -488,6 +582,21 @@ hr {
 // -----------------------------
 // Footer
 // -----------------------------
+
+.template-footer {
+    .flex-container {
+        padding: 30px 50px 20px;
+        margin-top: 50px;
+        margin-bottom: 0;
+        background-color: @color-swatch7;
+        @media only screen and (max-width: 1024px) {
+            padding: 30px 5%;
+            margin-bottom: 0;
+        }
+        // flex box classes are the same as in header - header-style.less
+        .justify-content(space-between);
+    }
+}
 
 .bk-pt-default {
     .template-footer {
@@ -503,6 +612,9 @@ hr {
             flex: 0 1 50%;
         }
         @media @tablet {
+            .flex-container {
+                .flex-wrap(wrap);
+            }
             .flex-profile1,
             .flex-profile2,
             .hero-logo {
@@ -548,145 +660,5 @@ hr {
         .hero-logo {
             display: none;
         }
-    }
-}
-
-.template-footer {
-    .flex-container {
-        padding: 30px 50px 20px;
-        margin-top: 50px;
-        margin-bottom: 0;
-        background-color: @color-swatch7;
-        @media only screen and (max-width: 1024px) {
-            padding: 30px 5%;
-            margin-bottom: 0;
-        }
-        // flex box classes are the same as in header - header-style.less
-        .justify-content(space-between);
-    }
-    .flex-profile1,
-    .flex-profile2,
-    .hero-logo {
-        @media @tablet {
-            margin-bottom: 10px;
-            text-align: center;
-            -webkit-flex: 1 1 100%;
-            -ms-flex: 1 1 100%;
-            flex: 1 1 100%;
-        }
-    }
-    .address .address-line {
-        display: inline-block;
-
-        &:after {
-            display: inline-block;
-            content: ",";
-        }
-
-        &:last-child:after {
-            display: none;
-        }
-    }
-}
-
-
-// -----------------------------
-// Profile Widget
-// -----------------------------
-
-.profile {
-    h1, h2, h3, h4, p, a, .social-link:before {
-        font-size: bkscale(@font__p--font-size,0.8);
-        line-height: bkscale(@font__p--line-height,0.8);
-        color: @color-swatch6;
-        padding-bottom: 0;
-    }
-    .legend {
-        font-size: bkscale(@font__p--font-size,0.9);
-        line-height: bkscale(@font__p--line-height,0.9);
-        color: @color-swatch6;
-    }
-    input {
-        font-size: bkscale(@font__p--font-size,0.8);
-        line-height: bkscale(@font__p--line-height,0.8);
-        color: @color-swatch6;
-    }
-}
-
-.template-footer .profile {
-    .address p {
-        padding-bottom: 0;
-    }
-    .headline,
-    .strapline,
-    .description {
-        @media @mobile {
-            font-size: @font__p--font-size;
-            font-weight: @font__p--font-weight;
-            line-height: @font__p--line-height;
-        }
-    }
-}
-
-.hero-header,
-.template-footer {
-    .overlay.fail .message-box .message-text {
-        font-size: bkscale(@font__p--font-size,0.8);
-        line-height: bkscale(@font__p--line-height,0.8);
-        color: @color-swatch6;
-    }
-}
-
-
-// -----------------------------
-// Yelp
-// -----------------------------
-
-
-.yelpreview ul {
-    list-style: none;
-    margin: 16px 0;
-}
-
-
-
-
-// -------------------
-// Social Icons Widget
-// -------------------
-
-
-.social-item {
-    margin-right: 0;
-}
-
-.social-link {
-    padding: 5px;
-    color: @color__socialicons--icon;
-}
-
-// Social icons colour
-.social-link:before {
-    color: @color__socialicons--icon;
-    margin-right: 10px;
-}
-
-// Social icons transition text
-.social-name {
-    width: 0;
-    visibility:hidden;
-    opacity:0;
-    font-size: 0;
-    .transition( all, 0.5s, ease );
-}
-
-.social-link:hover {
-    text-decoration: none;
-    .social-name {
-        width: auto;
-        visibility: visible;
-        opacity: 1;
-        font-size: 16px;
-        .transition( all, 0.5s, ease );
     }
 }
