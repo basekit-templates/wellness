@@ -52,12 +52,6 @@
     }
 }
 
-.template-footer .flex-container {
-    @media @tablet {
-        .flex-wrap(wrap);
-    }
-}
-
 // top bar in default page
 .bk-pt-default .flex-container {
     background-color: @color-swatch7;
@@ -99,6 +93,20 @@
 .flex-profile2 {
     text-align: right;
 }
+
+// Flexbox in footer
+
+.template-footer .flex-container {
+    @media @tablet {
+        .flex-wrap(wrap);
+        .flex-item {
+            -webkit-flex: 1 1 100%;
+            -ms-flex: 1 1 100%;
+            flex: 1 1 100%;
+        }
+    }
+}
+
 
 
 
