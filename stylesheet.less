@@ -502,15 +502,30 @@ hr {
             -ms-flex: 0 1 50%;
             flex: 0 1 50%;
         }
-        .flex-profile1,
-        .flex-profile2,
-        .hero-logo {
-            @media @tablet {
+        @media @tablet {
+            .flex-profile1,
+            .flex-profile2,
+            .hero-logo {
                 -webkit-flex: 1 1 100%;
                 -ms-flex: 1 1 100%;
                 flex: 1 1 100%;
                 text-align: center;
                 padding-bottom: 10px;
+            }
+            .hero-logo {
+                -webkit-order: 0;
+                -ms-flex-order: 0;
+                order: 0;
+            }
+            .flex-profile1 {
+                -webkit-order: 1;
+                -ms-flex-order: 1;
+                order: 1;
+            }
+            .flex-profile2 {
+                -webkit-order: 2;
+                -ms-flex-order: 2;
+                order: 2;
             }
         }
     }
