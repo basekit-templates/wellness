@@ -580,12 +580,22 @@ hr {
 // -----------------------------
 
 .profile {
-    h1, h2, h3, h4, p, a, .social-link:before, .legend,
-    .signupform .fail .message-box .message-text, input {
+    h1, h2, h3, h4, p, a, .social-link:before,
+    .signupform .fail .message-box .message-text {
         font-size: bkscale(@font__p--font-size,0.8);
         line-height: bkscale(@font__p--line-height,0.8);
         color: @color-swatch6;
         padding-bottom: 0;
+    }
+    .legend {
+        font-size: bkscale(@font__p--font-size,0.9);
+        line-height: bkscale(@font__p--line-height,0.9);
+        color: @color-swatch6;
+    }
+    input {
+        font-size: bkscale(@font__p--font-size,0.8);
+        line-height: bkscale(@font__p--line-height,0.8);
+        color: @color-swatch6;
     }
 }
 
