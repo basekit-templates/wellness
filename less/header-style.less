@@ -165,7 +165,8 @@
         width: auto;
         visibility: visible;
         opacity: 1;
-        font-size: 16px;
+        font-size: bkscale(@font__p--font-size,0.8);
+        line-height: bkscale(@font__p--line-height,0.8);
         letter-spacing: 3px;
         color: @color__navigation--text--hover;
         .transition( all, 0.5s, ease );
@@ -205,7 +206,8 @@
     .profile .emailaddress a:hover {
         text-indent: 0;
         width: auto;
-        font-size: 18px;
+        font-size: bkscale(@font__p--font-size,0.8);
+        line-height: bkscale(@font__p--line-height,0.8);
         .transition( all, 0.5s, ease );
         @media only screen and (max-width : 600px) {
             width: 0;
