@@ -69,10 +69,10 @@
             "font-weight": "400",
             "line-height": "25px",
             "color": "@color-swatch6",
-            "color-hover": "@color-swatch6",
+            "color-hover": "@color-swatch3",
             "letter-spacing": "0px",
-            "background-color": "@color-swatch1",
-            "background-color-hover": "@color-swatch1"
+            "background-color": "@color-swatch7",
+            "background-color-hover": "@color-swatch7"
          },
         "font7": {
             "font-family": "\"Droid Sans\", Helvetica, Arial, sans-serif",
@@ -178,6 +178,7 @@
             "color__navigation--text--hover": "@font-swatch6-color-hover",
             "color__navigation--text--selected": "@font-swatch6-color-hover",
             "font__navigation--font-family" : "@font-swatch6-font-family",
+            "color__navigation--background": "@color-swatch7",
 
             "font__navigation--font-size" : "@font-swatch6-font-size",
             "font__navigation--font-weight" : "@font-swatch6-font-weight",

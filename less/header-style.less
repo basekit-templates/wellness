@@ -39,7 +39,7 @@
 }
 
 .flex-container { // Nav and profile widgets in top bar and footer
-    padding: 30px 50px 20px;
+    padding: 10px 50px;
     .flex-display;
     .justify-content(flex-start);
     .flex-wrap(nowrap);
@@ -49,13 +49,14 @@
     @media only screen and (max-width : 1024px) {
         padding: 0 5%;
         background-color: fade(@color-swatch6, 10%);
+        min-height: 51px;
     }
 }
 
 // top bar in default page
 .bk-pt-default .flex-container {
     background-color: @color-swatch7;
-    padding: 15px 50px 10px;
+    padding: 0 50px;
     margin-bottom: 0;
     @media only screen and (max-width : 1024px) {
         padding: 0 5%;
@@ -89,11 +90,13 @@
 
 .flex-profile1 {
     text-align: left;
-}
-.flex-profile2 {
-    text-align: right;
+    margin: 10px 10px 10px 0;
 }
 
+.flex-profile2 {
+    text-align: right;
+    margin: 10px 0 10px 10px;
+}
 
 
 
@@ -128,7 +131,7 @@
 }
 
 .company-link:hover {
-    color: @color__secondary;
+    color: @color-swatch3;
     text-decoration: none;
 }
 
@@ -168,7 +171,6 @@
         font-size: bkscale(@font__p--font-size,0.8);
         line-height: bkscale(@font__p--line-height,0.8);
         letter-spacing: 3px;
-        color: @color__navigation--text--hover;
         .transition( all, 0.5s, ease );
         @media only screen and (max-width : 600px) {
             display: none;
@@ -326,8 +328,8 @@
         background-color: @color__feature-button--background;
     }
     .button:hover {
-        border: 2px solid fade(@color__feature-button--border, 60%);
-        color: fade(@color__feature-button--text, 60%);
+        border: 2px solid @color-swatch3;
+        color: fade(@color__feature-button--text, 80%);
     }
 }
 
@@ -395,7 +397,7 @@
     .company-link {
         color: @color__companyname--text;
         &:hover {
-            color: lighten(@color__navigation--text--hover, 30%);
+            color: @color-swatch3;
         }
     }
     .navigation-list--children {
@@ -463,6 +465,10 @@
     white-space: normal;
     border: 1px solid @color__body--background;
     background-color: @color-swatch7;
+    @media only screen and (max-width : 1024px) {
+        border: none;
+    }
+
     .navigation-item--child {
         @media only screen and (min-width: 1024px) {
             border-bottom: 1px solid @color__body--background;
@@ -482,7 +488,7 @@
     letter-spacing: @font__navigation--letter-spacing;
     &:hover {
         color: @color__navigation--text--hover;
-        text-decoration: underline;
+        text-decoration: none;
     }
     @media only screen and (min-width: 600px) and (max-width: 1024px) {
         font-size: 20px;
@@ -495,7 +501,7 @@
 
 .navigation-item.selected .item-name {
     color: @color__navigation--text--selected;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 
@@ -518,7 +524,7 @@
         z-index: 10002;
 
         padding: 150px 100px;
-        background-color: @color-swatch4;
+        background-color: @color__navigation--background;
 
         // Allows scrolling on mobile
         &.open {
@@ -549,9 +555,12 @@
     padding: 0;
     position: relative;
     opacity: 1;
-    background-color: transparent;
-    .transform(@x:0, @y:0);
     visibility: visible;
+    background-color: transparent;
+    @media only screen and (max-width : 1024px) {
+        background-color: lighten(@color__navigation--background, 5%);
+    }
+    .transform(@x:0, @y:0);
 }
 
 // Navigation item
