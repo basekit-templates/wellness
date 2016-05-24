@@ -10,7 +10,7 @@
     .align-items(center);
     .align-content(space-between);
     width: 100%;
-    background-color: @color-swatch7;
+    background-color: @color__navigation--background;
 
     // Reorder items for mobile
     @media only screen and (max-width : 600px) {
@@ -55,7 +55,7 @@
 
 // top bar in default page
 .bk-pt-default .flex-container {
-    background-color: @color-swatch7;
+    background-color: @color__navigation--background;
     padding: 0 50px;
     margin-bottom: 0;
     @media only screen and (max-width : 1024px) {
@@ -414,8 +414,6 @@
 
 .bk-tpl-hidden[data-widget-type="feature"] + .hero-header {
     position: relative;
-    border-bottom: 1px solid darken(@color__body--background, 8%);
-    margin-bottom: 30px;
 }
 
 [data-widget-type="feature"] .widget-overlay {
@@ -467,7 +465,7 @@
     right: 0;
     white-space: normal;
     border: 1px solid @color__body--background;
-    background-color: @color-swatch7;
+    background-color: @color__navigation--background;
     @media only screen and (max-width : 1024px) {
         border: none;
     }
