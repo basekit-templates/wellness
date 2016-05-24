@@ -75,6 +75,11 @@
     -webkit-flex: 0 1 250px;
     -ms-flex: 0 1 250px;
     flex: 0 1 250px;
+    @media @mobile {
+        -webkit-flex: 0 1 100px;
+        -ms-flex: 0 1 100px;
+        flex: 0 1 100px;
+    }
 }
 
 // Navigation widget
@@ -431,7 +436,9 @@
 // Navigation
 // ----------
 
-
+.noscroll {
+    position: fixed;
+}
 
 // Folder, adds arrow icon
 .item-name--parent:after {
