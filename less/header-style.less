@@ -48,7 +48,7 @@
     margin-bottom: 20px;
     @media only screen and (max-width : 1024px) {
         padding: 0 5%;
-        background-color: fade(@color-swatch6, 10%);
+        background-color: fade(@color__navigation--background, 10%);
         min-height: 51px;
     }
 }
@@ -414,6 +414,18 @@
 
 .bk-tpl-hidden[data-widget-type="feature"] + .hero-header {
     position: relative;
+    height: auto;
+    min-height: inherit;
+    .flex-container {
+        background-color: fade(@color__navigation--background, 10%);
+    }
+    .hero-logo {
+        position: relative;
+        padding: 20px;
+        @media @mobile {
+            padding: 5px;
+        }
+    }
 }
 
 [data-widget-type="feature"] .widget-overlay {
