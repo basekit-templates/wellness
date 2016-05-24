@@ -2,8 +2,24 @@
 {% block class %}bk-pt-default{% endblock %}
 {% block content %}
 
-<!-- Header Include -->
-    {% include "includes/header.twig" %}
+    <!-- Header -->
+    <div class="hero-header">
+
+        <div class="flex-container">
+
+            <div class="flex-item flex-profile1">
+                {{widget('profile', 'email', { 'profileType':'email', 'email':'profile'})|raw}}
+            </div>
+            <div class="flex-item flex-nav">
+                {{widget('extendednavigation', 'navigation', {"align":"center"})|raw}}
+            </div>
+            <div class="flex-item flex-profile2">
+                {{widget('profile', 'phone', { 'profileType':'phone', 'phone':'profile'})|raw}}
+            </div>
+
+        </div>
+
+    </div>
 
     <div class="page-title">
         {{widget('pagetitle', 'page-title', {})|raw}}
