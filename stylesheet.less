@@ -595,6 +595,9 @@ hr {
         }
         // flex box classes are the same as in header - header-style.less
         .justify-content(space-between);
+        @media @tablet {
+            .flex-wrap(wrap);
+        }
     }
 }
 
@@ -612,15 +615,13 @@ hr {
             flex: 0 1 50%;
         }
         @media @tablet {
-            .flex-container {
-                .flex-wrap(wrap);
-            }
             .flex-profile1,
             .flex-profile2,
             .hero-logo {
                 -webkit-flex: 1 1 100%;
                 -ms-flex: 1 1 100%;
                 flex: 1 1 100%;
+                width: 100%;
                 text-align: center;
                 padding-bottom: 10px;
             }
