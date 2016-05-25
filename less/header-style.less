@@ -41,10 +41,10 @@
 .flex-container { // Nav and profile widgets in top bar and footer
     padding: 10px 50px;
     .flex-display;
-    .justify-content(flex-start);
+    .justify-content(space-between);
     .flex-wrap(nowrap);
-    .align-items(flex-start);
-    .align-content(space-between);
+    .align-items(stretch);
+    .align-content(stretch);
     margin-bottom: 20px;
     @media only screen and (max-width : 1024px) {
         padding: 0 5%;
@@ -75,6 +75,11 @@
     -webkit-flex: 0 1 250px;
     -ms-flex: 0 1 250px;
     flex: 0 1 250px;
+    @media only screen and (max-width : 1024px) {
+        -webkit-flex: 0 1 100%;
+        -ms-flex: 0 1 100%;
+        flex: 0 1 100%;
+    }
     @media @mobile {
         -webkit-flex: 0 1 100px;
         -ms-flex: 0 1 100px;
@@ -95,12 +100,18 @@
 
 .flex-profile1 {
     text-align: left;
-    margin: 10px 10px 10px 0;
+    margin: 15px 10px 15px 0;
+    @media only screen and (max-width : 1024px) {
+        margin: 10px 10px 10px 0;
+    }
 }
 
 .flex-profile2 {
     text-align: right;
-    margin: 10px 0 10px 10px;
+    margin: 15px 0 15px 10px;
+    @media only screen and (max-width : 1024px) {
+        margin: 10px 0 10px 10px;
+    }
 }
 
 
@@ -443,6 +454,12 @@
 .noscroll {
     position: fixed;
     width: 100%;
+}
+
+.extendednavigation .navigation-body {
+    @media only screen and (min-width : 1024px) {
+        margin: 10px 0;
+    }
 }
 
 // Folder, adds arrow icon
