@@ -208,7 +208,7 @@ legend,
 .ecomproductslist .fieldset--filters .form-body,// Ecom Filters
 .ecomproductslist .fieldset--search .form-body,// Ecom Search
 .ecomproductslist .form-group {
-    @media @mobile {
+    @media only screen and (max-width:600px) {
         display: inline-block;
         width: 100%;
         margin-right: 0;
@@ -461,7 +461,7 @@ button,
         background-color: @color__button--background--hover;
         border: 2px solid darken(@color__button--border, 10%);
     }
-    @media @mobile {
+    @media only screen and (max-width:600px) {
         width: 100%;
         text-align: center;
     }
@@ -475,17 +475,17 @@ button,
     button,
     .button {
         border-left: none;
-        @media @mobile {
+        @media only screen and (max-width:600px) {
             border: 2px solid @color__button--border;
         }
         &:hover {
             border: 2px solid @color__button--border;
             border-left: none;
-            @media @mobile {
+            @media only screen and (max-width:600px) {
                 border: 2px solid @color__button--border-hover;
             }
         }
-        @media only screen and (min-width:480px) {
+        @media only screen and (min-width:600px) {
             padding: 0 12px;
         }
     }
