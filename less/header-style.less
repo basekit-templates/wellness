@@ -538,10 +538,21 @@
 // Nav in Tablet & Mobile
 // -----------------------------
 
+.noscroll .hero-header .flex-container {
+    padding: 0;
+}
+
+[data-widget-type="extendednavigation"] {
+    @media only screen and (max-width : 1024px) {
+        position: static;
+    }
+}
+
 .navigation-list {
     @media only screen and (max-width : 1024px) {
-        position: fixed;
+        position: absolute;
         left: 0;
+        right: 0;
         top: 0;
         height: 100vh;
         width: 100%;
