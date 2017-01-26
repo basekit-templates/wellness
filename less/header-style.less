@@ -145,6 +145,10 @@
     width: auto !important;
     max-height: 300px;
     margin-bottom: 5px;
+    
+    @media @mobile {
+        max-height: 250px;
+    }
 }
 
 .company-link:hover {
@@ -267,7 +271,7 @@
         }
         min-height: 680px;
         @media only screen and (max-width: 600px) {
-            min-height: 340px;
+            min-height: 400px;
         }
     }
     .background-image {
@@ -389,11 +393,6 @@
     }
 
     min-height: 80%;
-    @media only screen and (max-width: 600px) {
-        min-height: auto;
-        position: relative;
-        margin-bottom: 20px;
-    }
 
     .hero-logo {
         position: absolute;
