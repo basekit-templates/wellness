@@ -36,7 +36,7 @@
     <script src="{{ asset('js/clickable.js')}}"></script>
 
     <!-- Nav Menu & Blog Search Script -->
-    <script>
+    <script nonce="{{ numberUsedOnce }}">
 
         // Nav
         $( ".navigation-toggle" ).click(function() {
@@ -53,7 +53,7 @@
 
 
     <!-- Touch Script -->
-    <script>
+    <script nonce="{{ numberUsedOnce }}">
         $(document).on('mq4hsChange', function (e) {
             console.log(e);
             $(document.documentElement).toggleClass('no-touch', e.trueHover);
@@ -65,7 +65,7 @@
 
 
 <!-- Feature -->
-<script>
+<script nonce="{{ numberUsedOnce }}">
 
 if ($(".hero").length) {
     var featureHeight = $(".hero").height();
