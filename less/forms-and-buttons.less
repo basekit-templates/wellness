@@ -15,6 +15,18 @@ textarea,
     background-color: transparent;
 }
 
+input[type="search"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+.input--single-line:focus {
+    border: 2px solid @color__button--border;
+    box-shadow: none;
+    @media only screen and (max-width:600px) {
+        border: 2px solid @color__button--border;
+    }
+}
+
 input[type="search"],
 .signupform .form-body input[type="email"]  {
     border: 2px solid @color__button--border;
@@ -23,18 +35,10 @@ input[type="search"],
     @media only screen and (max-width:600px) {
         border: 2px solid darken(@color__body--background, 10%);
     }
-}
 
-input[type="search"]:focus,
-input[type="email"]:focus,
-input[type="password"]:focus,
-textarea:focus,
-.input--single-line:focus {
-    border: 2px solid @color__button--border;
-    border-right: none;
-    box-shadow: none;
-    @media only screen and (max-width:600px) {
-        border: 2px solid @color__button--border;
+
+    &:focus {
+        border-right: none;
     }
 }
 
