@@ -226,6 +226,9 @@
             "color__ecomproductslist-product-title--text": "@color-swatch4",
             "color__ecomproduct-title--text": "@color-swatch4",
             "color__ecomproduct-price--text": "@color__p--text"
+        },
+        "footer": {
+            "color__footer--background": "#454642"
         }
     }
 }
