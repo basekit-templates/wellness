@@ -602,12 +602,11 @@
     }
 }
 
-.navigation-list.open .navigation-item:hover .navigation-list--children {
+.navigation-list.open .navigation-item:hover .navigation-list--children,
+.navigation-list.open .navigation-item.folder-open .navigation-list--children {
     height: auto;
     padding: 0;
     position: relative;
-    opacity: 1;
-    visibility: visible;
     background-color: transparent;
     @media only screen and (max-width : 1024px) {
         background-color: lighten(@color__navigation--background, 5%);
@@ -815,28 +814,24 @@
 }
 
 // On devices without touch enabled, hover events will work as normal
-.no-touch {
-    .extendednavigation .navigation-item {
+.extendednavigation .navigation-item {
 
-       // Activates hover state open
-        &:hover > .navigation-list--children {
-            display: block!important;
-            width: fit-content;
-        }
-
-       // Hides JS toggle open
-        &.folder-open .navigation-list--children {
-            display: none;
-        }
+   // Activates hover state open
+    &:hover .navigation-list--children {
+        display: block;
+        opacity: 1;
+        width: fit-content;
+        visibility: visible;
     }
 }
 
 
 // On devices with touch enabled, hover is disabled and the JS toggle (.folder-open) is used
-.extendednavigation .navigation-item {
+.touch .extendednavigation .navigation-item {
 
     // Hides hover state
-    &:hover .navigation-list--children {
+    &:hover .navigation-list--children,
+    .folder-open .navigation-list--children {
         display: none;
     }
 
@@ -846,6 +841,8 @@
         width: 100%;
     }
 }
+
+
 
 
 // -------------------
