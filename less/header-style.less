@@ -172,6 +172,7 @@
 .hero-header {
     text-align: right;
     .phone-number-link {
+        display: inline-block;
         height: 40px;
     }
     .profile .phone-number {
@@ -181,7 +182,8 @@
         font-size: 0;
     }
     .profile .companyphone .icon:before {
-        margin-right: 0!important;
+        content: "\f095";
+        font-family: 'FontAwesome';
     }
     .profile .phone-number-link:hover {
         text-decoration: none;
@@ -198,16 +200,6 @@
             display: none;
             letter-spacing: 0;
             opacity: 0.5;
-        }
-    }
-    .flex-profile1 {
-        .profile .phone-number-link.icon--phone {
-            padding: 10px 40px 10px 0;
-        }
-    }
-    .flex-profile2 {
-        .profile .phone-number-link.icon--phone {
-            padding: 10px 0 10px 40px;
         }
     }
 }
